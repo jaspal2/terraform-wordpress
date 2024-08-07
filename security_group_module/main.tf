@@ -1,9 +1,4 @@
 
-module "vpc" {
-
-  source = "../vpc_module"
-}
-
 module "db_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
