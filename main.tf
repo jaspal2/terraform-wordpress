@@ -113,7 +113,16 @@ module "db_rds" {
   # Database Deletion Protection
   deletion_protection = true
 
-
+  parameters = [
+    {
+      name  = "character_set_client"
+      value = "utf8mb4"
+    },
+    {
+      name  = "character_set_server"
+      value = "utf8mb4"
+    }
+  ]
 
 
 }
