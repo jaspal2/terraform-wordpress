@@ -126,7 +126,7 @@ module "db_rds" {
 
   options = [
     {
-      option_name = "MARIADB_AUDIT_PLUGIN"
+      option_name = "maria_db"
 
       option_settings = [
         {
