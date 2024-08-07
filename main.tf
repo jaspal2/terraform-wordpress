@@ -4,7 +4,7 @@
 
 
 
-module "vpc_custom" {
+module "vp" {
   source = "./vpc_module"
 
 }
