@@ -71,7 +71,7 @@ module "public_sg" {
 module "db_rds" {
   source = "terraform-aws-modules/rds/aws"
 
-  identifier = "wordpress_db"
+  identifier = "wordpress-db"
 
   engine            = "mysql"
   engine_version    = "8.0.35"
@@ -113,31 +113,5 @@ module "db_rds" {
   # Database Deletion Protection
   deletion_protection = true
 
-  parameters = [
-    {
-      name  = "character_set_client"
-      value = "utf8mb4"
-    },
-    {
-      name  = "character_set_server"
-      value = "utf8mb4"
-    }
-  ]
 
-  options = [
-    {
-      option_name = "maria_db"
-
-      option_settings = [
-        {
-          name  = "SERVER_AUDIT_EVENTS"
-          value = "CONNECT"
-        },
-        {
-          name  = "SERVER_AUDIT_FILE_ROTATIONS"
-          value = "37"
-        },
-      ]
-    },
-  ]
 }
