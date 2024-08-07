@@ -124,5 +124,20 @@ module "db_rds" {
     }
   ]
 
+  options = [
+    {
+      option_name = "MARIADB_AUDIT_PLUGIN"
 
+      option_settings = [
+        {
+          name  = "SERVER_AUDIT_EVENTS"
+          value = "CONNECT"
+        },
+        {
+          name  = "SERVER_AUDIT_FILE_ROTATIONS"
+          value = "37"
+        },
+      ]
+    },
+  ]
 }
